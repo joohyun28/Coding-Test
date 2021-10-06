@@ -2,7 +2,6 @@ S = input()
 
 result = int (S[0])
 
-#i의 범위 설정 1 <= i <= S길이
 for i in range(1, len(S)): 
     #두 값 중 하나가 1 이하이면 덧셈 
     if int(S[i]) <=1 or result <=1:
