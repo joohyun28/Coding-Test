@@ -1,13 +1,13 @@
 def twoSum(self, numbers: List[int], target: int) -> List[int]:
     for k, v in enumerate(numbers):
-        left, right = k + 1, len(numbers) - 1
-        expected = target - v
+        left, right = k + 1, len(numbers) - 1  //left는 k+1에서, right는 len(numbers)-1에서 시작
+        expected = target - v                  //target은 첫 번째 숫자에 두 번째 숫자를 더한 값, 두 번째 숫자는 target - 첫 번째 값
         #이진 탐색으로 나머지 값 판별
-        while left <= right:
+        while left <= right:                   //left값이 right값보다 작거나 같을 때
             mid = left + (right - left) // 2
-            if numbers[mid] < expected:
-                left = mid +1
-            elif numbers[mid] > expected:
-                right = mid -1
+            if numbers[mid] < expected:        //두 번째 값이 중간값보다 크면
+                left = mid +1                  //left값은 중간값+1
+            elif numbers[mid] > expected:      //두 번째 값이 중간값보다 작으면
+                right = mid -1                 //right값은 중간값 -1
             else:
-                return k + 1, mid + 1
+                return k + 1, mid + 1          //같다면 k+1, mid+1값을 출력
